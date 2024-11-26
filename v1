@@ -1,0 +1,36 @@
+grocery_list = []
+def add_item(grocery_list):
+    item = input("What is the item you want to add: ")
+    grocery_list.append(item)
+    print(f"'{item}' has been added to the list.")
+    lookatlist = input("Would you like to look at the list (Y/N): ")
+    view_items(grocery_list)
+    if lookatlist == "Y":
+        view_items(grocery_list)
+    else:
+        print("Okay have a good day!")
+def view_items(grocery_list):
+    if len(grocery_list) == 0:
+        print("You have no items in your grocery list.")
+    elif len(grocery_list) == 1:
+        print("You have 1 item in your grocery list. The item is: ")
+        print(grocery_list)
+    else:
+        print("You have ", len(grocery_list), " items in your grocery list! The items are:")
+        print(grocery_list)
+        
+add_item(grocery_list)
+view_items(grocery_list)
+
+print("Welcome to your grocery list!")
+print("1: Add an item")
+print("2: View your list")
+print("Exit")
+choice = input("Choose one (1,2,3): ")
+
+if choice == "1":
+    add_item(grocery_list)
+elif choice == "2":
+    view_items(grocery_list)
+else:
+    print("Thank you! Goodbye!")
